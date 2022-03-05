@@ -1,3 +1,23 @@
 #!/usr/bin/env ruby
 
 require_relative '../config/environment'
+
+#greet
+puts "Hello! Welcome to Tic-Tac-Toe!"
+#ask how many players (0, 1, or 2)
+puts "How many players? (enter 0, 1, or 2):"
+input = gets.chomp
+#initialize game based on configuration
+case input.to_i
+when 0
+   g = Game.new(Players::Computer.new("X"),Players::Computer.new("O"),Board.new)
+   g.play
+when 1
+    g = Game.new(Players::Human.new("X"),Players::Computer.new("O"),Board.new)
+    g.play
+when 2
+    g = Game.new(Players::Computer.new("X"),Players::Computer.new("O"),Board.new)
+    g.play
+end
+#after game ask if they want to play again, change player count, or exit
+puts "It's over."

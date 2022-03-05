@@ -14,7 +14,11 @@ class Game
 
     def initialize(p1 = Players::Human.new("X"),p2 = Players::Human.new("O"),board = Board.new)
         @player_1 = p1
+        @player_1.board = board
+        @player_1.game = self
         @player_2 = p2
+        @player_2.board = board
+        @player_2.game = self
         @board = board
     end
     def current_player
@@ -57,6 +61,7 @@ class Game
         a = (current_player.move(@board))
         if @board.valid_move?(a)
             @board.update(a,current_player)
+            @board.display
         else  
             puts "no sir"
             turn
