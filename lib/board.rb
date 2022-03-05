@@ -13,7 +13,6 @@ class Board
         puts "\n ///////// \n"
     end
     def reset!
-       #@cells.clear
        @cells = Array.new(9," ")
     end
     def to_index(input)

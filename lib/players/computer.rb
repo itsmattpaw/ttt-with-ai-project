@@ -6,17 +6,17 @@ module Players
         end
         def move_corner
             a = ["1","3","7","9"].sample
-            if @board.valid_move?(a)
+            #if @board.valid_move?(a) == true
                 return a 
-            else  
-                ["1","3","7","9"].find {|s| @board.valid_move?(s)}
-            end
+            #else  
+            #    ["1","3","7","9"].find {|s| @board.valid_move?(s)}
+            #end
         end
         def move_random
-            a = 'invalid'
-            until @board.valid_move?(a) == true
+        #    a = 'invalid'
+        #    until @board.valid_move?(a) == true
                 a = ["1","2","3","4","5","6","7","8","9"].sample
-            end
+        #    end
             a
         end
     end
